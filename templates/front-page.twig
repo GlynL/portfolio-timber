@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+{% block header %}
+    <div class="wrapper">
+        <div class='header' style='background-image: url({{post.thumbnail}})'>
+            <h1 class="header-logo" role="banner">
+                <a class="header-logo-link" href="{{site.url }}" rel="home">{{site.name}}</a>
+            </h1>
+        </div>
+        {# <nav id="nav-main" class="nav-main" role="navigation">
+            {% include "menu.twig" with {
+                'menu' : menu.get_items
+            } %}
+        </nav> #}
+        <!-- #nav -->
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="content-wrapper">
+        <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+            <section class="article-content">
+                <h1 class="article-h1">{{post.title}}</h1>
+                <div class="article-body">
+                    {{post.content}}
+                </div>
+            </section>
+        </article>
+    </div>
+    <!-- /content-wrapper -->
+{% endblock %}

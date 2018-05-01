@@ -29,7 +29,18 @@ class StarterSite extends TimberSite {
 	}
 
 	function register_post_types() {
-		//this is where you can register custom post types
+    //this is where you can register custom post types
+    register_post_type('portfolio', array(
+      'supports' => array('title', 'editor', 'thumbnail'),
+      'has_archive' => true,
+      'public' => true,
+      'labels' => array(
+        'name' => 'Portfolio',
+        'add_new_item' => 'Add New Portfolio Item',
+        'edit_item' => 'Edit Portfolio Item',
+        'all_items' => 'All Portfolio Items',
+      ),
+    ));
 	}
 
 	function register_taxonomies() {

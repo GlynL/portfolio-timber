@@ -10,5 +10,13 @@
 				</div>
 			</section>
 		</article>
+    <div>
+      {% for item in portfolio %}
+        <div>
+          {{ item.title }}
+          {{ item.content }}
+        </div>
+      {% endfor %}
+    </div>
 	</div><!-- /content-wrapper -->
 {% endblock %}
