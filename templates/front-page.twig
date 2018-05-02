@@ -1,7 +1,7 @@
 {% extends "base.twig" %}
 {% block header %}
     <div class="wrapper">
-        <div class='header' style='background-image: url({{post.thumbnail}})'>
+        <div class='header--image' style='background-image: url({{post.thumbnail.src}})'>
             <h1 class="header-logo" role="banner">
                 <a class="header-logo-link" href="{{site.url }}" rel="home">{{site.name}}</a>
             </h1>
@@ -18,11 +18,12 @@
 {% block content %}
     <div class="content-wrapper">
         <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-            <section class="article-content">
-                <h1 class="article-h1">{{post.title}}</h1>
-                <div class="article-body">
-                    {{post.content}}
-                </div>
+            <section class="gallery">
+              {% for item in products %}
+                <a class="gallery--item" href='{{item.link}}'>
+                  <img class="gallery--image" src="{{item.thumbnail.src('medium_large')}}">
+                </a>
+              {% endfor %}
             </section>
         </article>
     </div>

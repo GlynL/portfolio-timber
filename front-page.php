@@ -20,9 +20,9 @@ $context['post'] = $post;
 
 
 $args = array(
-  'post_type' => 'portfolio'
+  'post_type' => 'product'
 );
-$context['portfolio'] = Timber::get_posts($args);
+$context['products'] = Timber::get_posts($args);
 
 
 

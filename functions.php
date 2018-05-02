@@ -35,13 +35,14 @@ class StarterSite extends TimberSite {
       'has_archive' => true,
       'public' => true,
       'labels' => array(
-        'name' => 'Portfolio',
+        'name' => 'hello',
         'add_new_item' => 'Add New Portfolio Item',
         'edit_item' => 'Edit Portfolio Item',
         'all_items' => 'All Portfolio Items',
       ),
     ));
-	}
+  }
+  
 
 	function register_taxonomies() {
 		//this is where you can register custom taxonomies
@@ -64,9 +65,11 @@ class StarterSite extends TimberSite {
 	function add_to_twig( $twig ) {
 		/* this is where you can add your own functions to twig */
 		$twig->addExtension( new Twig_Extension_StringLoader() );
-		$twig->addFilter('myfoo', new Twig_SimpleFilter('myfoo', array($this, 'myfoo')));
+    $twig->addFilter('myfoo', new Twig_SimpleFilter('myfoo', array($this, 'myfoo')));
+    $twig->addFilter('rewritePortfolioPostType', new Twig_SimpleFilter('rewritePortfolioPostType', array($this, 'rewritePortfolioPostType')));
 		return $twig;
-	}
+  }
+  
 
 }
 
